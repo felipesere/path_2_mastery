@@ -1,0 +1,16 @@
+{
+  "name": "react-workshop",
+  "version": "1.0.0",
+  "description": "Introduction to React",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christoph Gockel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christophgockel/react-workshop.git"
+  },
+  "homepage": "https://github.com/christophgockel/react-workshop"
+}
