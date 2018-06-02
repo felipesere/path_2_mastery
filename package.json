@@ -4,7 +4,7 @@
   "description": "A collection of learning modules",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base dist",
+    "dev": "webpack-dev-server --mode development --content-base dist",
     "api": "json-server --port 8081 --watch api.json"
   },
   "author": "Felipe Sere, Christoph Gockel",
