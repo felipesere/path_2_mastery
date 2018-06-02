@@ -6,15 +6,17 @@ h1, h2, h3 {
   color: #626E7A;
 }
 
-#app > div {
-  display: flex;
+.card {
+  background: #fff;
+  border: 1px solid red;
+  border-radius: 5px;
 }
 
-#app div > aside {
-  flex: 0 0 20%;
+.cardGrid {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, 250px);
+  justify-content: center;
+  padding: 0;
 }
-
-#app div > div {
-  flex: 1;
-}
-

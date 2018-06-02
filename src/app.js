@@ -1,4 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById('app'));
+import {Path2Mastery} from './path-2-mastery'
+
+ReactDOM.render(<Path2Mastery/>, document.getElementById('app'))
