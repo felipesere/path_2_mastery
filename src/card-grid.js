@@ -1,18 +1,18 @@
 import React from 'react'
-import { Card } from './card'
+import { DetailedLesson } from './card'
 
 export function CardGrid() {
   return (
     <div className="cardGrid">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
     </div>
   )
 }

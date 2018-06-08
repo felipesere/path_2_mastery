@@ -1,16 +1,12 @@
 body {
-  background: #EEF2F5;
-  color: #29323C;
-}
-h1, h2, h3 {
-  color: #626E7A;
+  background: #eef2f5;
+  color: #29323c;
 }
 
-.card {
-  background: #fff;
-  border: 1px solid red;
-  border-radius: 5px;
-  padding: 5px;
+h1,
+h2,
+h3 {
+  color: #626e7a;
 }
 
 .cardGrid {
