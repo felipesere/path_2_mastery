@@ -1,18 +1,18 @@
 import React from 'react'
-import { DetailedLesson } from './detailed-lesson'
+import { Lesson } from './lesson/lesson'
 
 export function MyPath() {
   return (
     <div className="path">
-      <DetailedLesson />
-      <DetailedLesson />
-      <DetailedLesson />
-      <DetailedLesson />
-      <DetailedLesson />
-      <DetailedLesson />
-      <DetailedLesson />
-      <DetailedLesson />
-      <DetailedLesson />
+      <Lesson.Detailed />
+      <Lesson.Detailed />
+      <Lesson.Detailed />
+      <Lesson.Detailed />
+      <Lesson.Detailed />
+      <Lesson.Detailed />
+      <Lesson.Detailed />
+      <Lesson.Detailed />
+      <Lesson.Detailed />
     </div>
   )
 }

@@ -1,19 +1,19 @@
 import React from 'react'
-import { SmallLesson } from './small_lesson'
+import { Lesson } from './lesson/lesson'
 import { Card } from 'semantic-ui-react'
 
 export function AvailableLessons() {
   return (
     <Card.Group className="available-lessons">
-      <SmallLesson />
-      <SmallLesson />
-      <SmallLesson />
-      <SmallLesson />
-      <SmallLesson />
-      <SmallLesson />
-      <SmallLesson />
-      <SmallLesson />
-      <SmallLesson />
+      <Lesson.Small />
+      <Lesson.Small />
+      <Lesson.Small />
+      <Lesson.Small />
+      <Lesson.Small />
+      <Lesson.Small />
+      <Lesson.Small />
+      <Lesson.Small />
+      <Lesson.Small />
     </Card.Group>
   )
 }
