@@ -8,10 +8,10 @@ function Navigation() {
   return (
     <Menu>
       <Menu.Item>
-        <Link to="/">All cards</Link>
+        <Link to="/">All Lessons</Link>
       </Menu.Item>
       <Menu.Item>
-        <Link to="/my-path">MyPath</Link>
+        <Link to="/my-path">My Path</Link>
       </Menu.Item>
     </Menu>
   )
