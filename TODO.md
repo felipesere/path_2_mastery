@@ -4,13 +4,15 @@ TODOS:
 [ ] Add prettier and hooks
 [ ] Add react-fragment?
 [X] Clean up Class vs. Functional components
-[ ] Find decent terminology like "Module", "Step", Lesson, Card...
+[X] Find decent terminology like "Module", "Step", Lesson, Card...
+  - settled on `Lesson` as the top level, with `.Small` and `.Detailed` as suffix
 [ ] Display a path of selected modules
 [ ] How to add modules to paths?
   - maybe add fast buttons directly from the top level UI?
   - Skip the notion of a "basket" entirely
 [ ] Differentiate between "done", "selected", "current" and everything else
-[ ] Differnt sizes of cards
+[~] Differnt sizes of cards
+  - started with `Small` and `Detailed`
 
 
 FEATURES:
