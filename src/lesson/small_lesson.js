@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Card, Icon, Button } from 'semantic-ui-react'
 
 const Done = () => (
@@ -29,6 +28,18 @@ let LessonIcon = ({ done, current, todo }) => {
   return null
 }
 
+const Interactions = ({ done, current, todo }) => {
+  if (done || current || todo) {
+    return null
+  } else {
+    return (
+      <Button basic color="blue">
+        Add
+      </Button>
+    )
+  }
+}
+
 export function SmallLesson(props) {
   return (
     <Card raised>
@@ -40,9 +51,7 @@ export function SmallLesson(props) {
         <Card.Description>Some minor detail. Minimal.</Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <Button basic color="blue">
-          Add
-        </Button>
+        <Interactions {...props} />
       </Card.Content>
     </Card>
   )
