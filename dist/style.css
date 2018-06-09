@@ -32,3 +32,7 @@ h3 {
 .path > * {
   padding-bottom: 20px;
 }
+
+.lesson-icon {
+  float: right;
+}
