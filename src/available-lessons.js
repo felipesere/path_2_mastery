@@ -12,7 +12,7 @@ export function AvailableLessons() {
       <Lesson.Small done />
       <Lesson.Small done />
       <Lesson.Small />
-      <Lesson.Small />
+      <Lesson.Small todo />
     </div>
   )
 }

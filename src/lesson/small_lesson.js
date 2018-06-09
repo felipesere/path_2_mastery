@@ -10,12 +10,20 @@ const Current = () => (
   <Icon className="lesson-icon" name="star" color="yellow" />
 )
 
-let LessonIcon = ({ done, current }) => {
+const Todo = () => (
+  <Icon className="lesson-icon" name="circle outline" color="blue" />
+)
+
+let LessonIcon = ({ done, current, todo }) => {
   if (done) {
     return <Done />
   }
   if (current) {
     return <Current />
+  }
+
+  if (todo) {
+    return <Todo />
   }
 
   return null
