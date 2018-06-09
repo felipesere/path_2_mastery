@@ -9,11 +9,21 @@ h3 {
   color: #626e7a;
 }
 
-.cardGrid {
+.available-lessons {
+  width: auto;
   display: grid;
   grid-auto-rows: 1fr;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, 250px);
+}
+
+.path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 0;
+}
+
+.path > * {
+  padding-bottom: 20px;
 }

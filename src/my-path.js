@@ -1,5 +1,18 @@
 import React from 'react'
+import { DetailedLesson } from './detailed-lesson'
 
 export function MyPath() {
-  return <p>There is no path for you.</p>
+  return (
+    <div className="path">
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+      <DetailedLesson />
+    </div>
+  )
 }
