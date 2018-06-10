@@ -1,12 +1,12 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
 
-export function TinyLesson() {
+export function TinyLesson({ lesson }) {
   return (
     <Card raised>
       <Card.Content>
-        <Card.Header>Java TTT 3x3</Card.Header>
-        <Card.Meta>Something fancy</Card.Meta>
+        <Card.Header>{lesson.title}</Card.Header>
+        <Card.Meta>{lesson.subtitle}</Card.Meta>
       </Card.Content>
     </Card>
   )

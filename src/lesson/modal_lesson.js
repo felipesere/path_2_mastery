@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { Modal, Header } from 'semantic-ui-react'
 import hash from 'string-hash'
-import { LessonIcon } from './icons'
 import ReactMarkdown from 'react-markdown'
 
 export function ModalLesson({ lesson, close }) {
