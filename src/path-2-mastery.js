@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import { AvailableLessons } from './available-lessons'
-import { MyPath } from './my-path'
+import { MyPathContainer } from './my-path'
 import { Menu, Loader } from 'semantic-ui-react'
 
 function Navigation() {
@@ -23,7 +23,7 @@ export class Path2Mastery extends Component {
       <div>
         <Navigation />
         <Route exact path="/" component={AvailableLessonsContainer} />
-        <Route exact path="/my-path" component={MyPath} />
+        <Route exact path="/my-path" component={MyPathContainer} />
       </div>
     )
   }

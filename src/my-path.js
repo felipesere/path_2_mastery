@@ -1,7 +1,13 @@
 import React from 'react'
 import { Lesson } from './lesson/lesson'
 
-export function MyPath() {
+export class MyPathContainer extends React.Component {
+  render() {
+    return <MyPath />
+  }
+}
+
+function MyPath() {
   return (
     <div className="path">
       <Lesson.Tiny />
