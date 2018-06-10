@@ -16,11 +16,16 @@ const Interactions = ({ moreDetails }) => {
 }
 
 export function SmallLesson({ lesson, state, moreDetails }) {
+  const titleStyle = {
+    float: 'left',
+    width: '80%'
+  }
+
   return (
     <Card raised>
       <Card.Content>
         <Card.Header>
-          {lesson.title}
+          <p style={titleStyle}>{lesson.title}</p>
           <LessonIcon state={state} />
         </Card.Header>
         <Card.Description>{lesson.subtitle}</Card.Description>

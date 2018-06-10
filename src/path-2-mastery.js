@@ -23,7 +23,7 @@ export class Path2Mastery extends Component {
       <div>
         <Navigation />
         <Route exact path="/" component={AvailableLessonsContainer} />
-        <Route path="/my-path" component={MyPath} />
+        <Route exact path="/my-path" component={MyPath} />
       </div>
     )
   }
@@ -35,19 +35,23 @@ class AvailableLessonsContainer extends Component {
     this.state = { loading: true, lessons: [] }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch('http://localhost:3030/lessons')
       .then(response => response.json())
       .then(downloaded_lessons => {
         setTimeout(() => {
           this.setState({ loading: false, lessons: downloaded_lessons })
-        }, 1000)
+        }, 500)
       })
   }
 
   render() {
     if (this.state.loading) {
-      return <Loader active size="large">Loading lessons</Loader>
+      return (
+        <Loader active size="large">
+          Loading lessons
+        </Loader>
+      )
     } else {
       return <AvailableLessons lessons={this.state.lessons} />
     }
