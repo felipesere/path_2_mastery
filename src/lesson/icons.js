@@ -13,8 +13,8 @@ const Todo = () => (
   <Icon className="lesson-icon" name="circle outline" color="blue" />
 )
 
-export function LessonIcon({ state }) {
-  switch (state) {
+export function LessonIcon({ status }) {
+  switch (status) {
     case 'done':
       return <Done />
     case 'current':

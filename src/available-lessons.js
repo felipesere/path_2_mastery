@@ -1,6 +1,5 @@
 import React from 'react'
 import { Lesson } from './lesson/lesson'
-import { Modal } from 'semantic-ui-react'
 
 export function AvailableLessons({ lessons }) {
   return (
@@ -24,35 +23,15 @@ class ModalOrLesson extends React.Component {
   render() {
     if (this.state.displayDetails) {
       return (
-        <Lesson.Modal
-          lesson={this.props.lesson} 
-          close={this.toggleModal} />
+        <Lesson.Modal lesson={this.props.lesson} close={this.toggleModal} />
       )
     } else {
       return (
         <Lesson.Small
           lesson={this.props.lesson}
-          state={randomState()}
           moreDetails={this.toggleModal}
         />
       )
     }
   }
-}
-
-function randomState() {
-  switch (nextInt(4)) {
-    case 0:
-      return 'done'
-    case 1:
-      return 'current'
-    case 2:
-      return 'todo'
-    case 3:
-      return 'none'
-  }
-}
-
-function nextInt(max) {
-  return Math.floor(Math.random() * Math.floor(max))
 }
