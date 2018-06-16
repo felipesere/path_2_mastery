@@ -1,6 +1,7 @@
 import React from 'react'
 import { Lesson } from './lesson/lesson'
 import hash from 'string-hash'
+import { List } from './drag-and-drop/list'
 
 export class MyPathContainer extends React.Component {
   constructor(props) {
@@ -8,37 +9,37 @@ export class MyPathContainer extends React.Component {
     const bordingLessons = [
       {
         id: 1,
-        title: 'Java 3x3 TTT',
+        title: '1',
         subtitle: 'Something fancy and flavourful'
       },
       {
         id: 2,
-        title: 'Java 4x4 TTT',
+        title: '2',
         subtitle: 'Something fancy and flavourful'
       },
       {
         id: 3,
-        title: 'Java 6x5 TTT',
+        title: '3',
         subtitle: 'Something fancy and flavourful'
       },
       {
         id: 4,
-        title: 'Java 6x6 TTT',
+        title: '4',
+        subtitle: 'Something fancy and flavourful'
+      },
+      {
+        id: 5,
+        title: '5',
         subtitle: 'Something fancy and flavourful'
       },
       {
         id: 6,
-        title: 'Java 7x7 TTT',
+        title: '6',
         subtitle: 'Something fancy and flavourful'
       },
       {
         id: 7,
-        title: 'Java 8x8 TTT',
-        subtitle: 'Something fancy and flavourful'
-      },
-      {
-        id: 8,
-        title: 'Java 9x9 TTT',
+        title: '7',
         subtitle: 'Something fancy and flavourful'
       }
     ]
@@ -58,7 +59,7 @@ function MyPath({ done, todo }) {
     <div className="path">
       {done.map(l => <Lesson.Tiny key={hash(l.title)} lesson={l} />)}
       <Lesson.Detailed />
-      {todo.map(l => <Lesson.Tiny key={hash(l.title)} lesson={l} />)}
+      <List elements={todo} displayFn={l => <Lesson.Tiny lesson={l} />} />
     </div>
   )
 }
