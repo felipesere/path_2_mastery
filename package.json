@@ -2,12 +2,14 @@
   "name": "path_2_mastery",
   "version": "0.0.1",
   "description": "A collection of learning modules",
+  "homepage": "https://github.com/felipesere/path_2_mastery",
   "main": "app.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --content-base dist",
     "api": "json-server --port 3030 --watch lessons.json",
     "lint": "eslint src test",
-    "prettier": "prettier --write *.js"
+    "prettier": "prettier --write *.js",
+    "test": "ava"
   },
   "author": "Felipe Sere, Christoph Gockel",
   "license": "MIT",
@@ -19,7 +21,11 @@
     "semi": false,
     "singleQuote": true
   },
-  "homepage": "https://github.com/felipesere/path_2_mastery",
+  "ava": {
+    "files": [
+      "test/**/*.spec.js"
+    ]
+  },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.0",
@@ -39,6 +45,7 @@
     "webpack-dev-server": "^3.0.0"
   },
   "dependencies": {
+    "ava": "^0.25.0",
     "react-markdown": "^3.3.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

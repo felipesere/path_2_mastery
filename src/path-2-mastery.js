@@ -22,8 +22,8 @@ export class Path2Mastery extends Component {
     return (
       <div>
         <Navigation />
-        <Route exact path="/" component={AvailableLessonsContainer} />
-        <Route exact path="/my-path" component={MyPathContainer} />
+        <Route exact path="/" component={MyPathContainer} />
+        <Route exact path="/my-path" component={AvailableLessonsContainer} />
       </div>
     )
   }
