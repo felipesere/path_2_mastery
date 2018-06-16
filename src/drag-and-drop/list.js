@@ -69,7 +69,7 @@ class Draggable extends React.Component {
       names.delete('move-up')
     }
 
-    this.setState({ classNames: names })
+    //this.setState({ classNames: names })
   }
 
   leave() {
@@ -77,7 +77,7 @@ class Draggable extends React.Component {
     names.delete('move-up')
     names.delete('move-down')
 
-    this.setState({ className: names })
+    //this.setState({ className: names })
   }
 
   render() {
@@ -85,7 +85,7 @@ class Draggable extends React.Component {
       <div
         className={Array.from(this.state.classNames).join(' ')}
         draggable={true}
-        onDragStart={ev => {}}
+        onDragStart={this.start}
         onDragOver={this.over}
         onDragLeave={this.leave}
       >
@@ -113,22 +113,22 @@ class Droppable extends React.Component {
     const from = e.dataTransfer.getData('from-index')
 
     this.props.drop(from, this.props.index)
-    //this.setState({ className: '' })
+    this.setState({ className: '' })
   }
 
   onDragOver(e) {
     e.preventDefault()
-    //this.setState({ className: 'over' })
+    this.setState({ className: 'over' })
   }
 
   onDragLeave(e) {
-    //this.setState({ className: '' })
+    this.setState({ className: '' })
   }
 
   render() {
     return (
       <div
-        className={this.state.className}
+        className={`dropzone ${this.state.className}`}
         onDrop={this.onDrop}
         onDragOver={this.onDragOver}
         onDragLeave={this.onDragLeave}

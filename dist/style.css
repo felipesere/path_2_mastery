@@ -45,3 +45,13 @@ h3 {
 .move-down {
   margin-top: 80px;
 }
+
+.dropzone {
+  height: 20px;
+  transition: all .2s ease-out;
+}
+
+.over {
+  height: 100px;
+}
+
