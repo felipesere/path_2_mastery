@@ -40,6 +40,7 @@ export class List extends React.Component {
 class Draggable extends React.Component {
   constructor(props) {
     super(props)
+    this.ref = React.createRef()
 
     this.state = {
       classNames: new Set()
@@ -55,34 +56,36 @@ class Draggable extends React.Component {
   }
 
   over(e) {
-    var rect = ReactDOM.findDOMNode(this).getBoundingClientRect()
-    const height = rect.height
-    const top = rect.top
-    const mouseY = e.clientY
     const names = this.state.classNames
 
-    if (top + height / 2 < mouseY) {
-      names.add('move-up')
-      names.delete('move-down')
-    } else {
-      names.add('move-down')
-      names.delete('move-up')
+    switch (roughMouseLocation(this.ref.current, e)) {
+      case 'top-half':
+        {
+          console.log('top-half')
+          names.add('move-up')
+          names.delete('move-down')
+        }
+        break
+      case 'bottom-half':
+        {
+          console.log('bottom-half')
+          names.add('move-down')
+          names.delete('move-up')
+        }
+        break
     }
-
-    //this.setState({ classNames: names })
   }
 
   leave() {
     const names = this.state.classNames
     names.delete('move-up')
     names.delete('move-down')
-
-    //this.setState({ className: names })
   }
 
   render() {
     return (
       <div
+        ref={this.ref}
         className={Array.from(this.state.classNames).join(' ')}
         draggable={true}
         onDragStart={this.start}
@@ -136,5 +139,18 @@ class Droppable extends React.Component {
         SPACE
       </div>
     )
+  }
+}
+
+function roughMouseLocation(element, event) {
+  var rect = element.getBoundingClientRect()
+  const height = rect.height
+  const top = rect.top
+  const mouseY = event.clientY
+
+  if (top + height / 2 > mouseY) {
+    return 'top-half'
+  } else {
+    return 'bottom-half'
   }
 }
