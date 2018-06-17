@@ -25,15 +25,11 @@ export class List extends React.Component {
     )
   }
 
-  swap(from, to) {
+  swap(index, newLocation) {
     const elements = this.state.elements
-    const toBeMoved = elements[from]
-    if (from > to) {
-      to += 1
-    }
-    elements.splice(from, 1)
-    elements.splice(to, 0, toBeMoved)
-    this.setState({ elements: elements })
+    this.setState({
+      elements: transform(elements).move(index, { to: newLocation })
+    })
   }
 }
 
@@ -152,5 +148,20 @@ function roughMouseLocation(element, event) {
     return 'top-half'
   } else {
     return 'bottom-half'
+  }
+}
+
+export function transform(collection) {
+  return {
+    move: (idx, { to: location }) => {
+      const elements = [...collection]
+      const toBeMoved = elements[idx]
+      if (idx > location) {
+        location += 1
+      }
+      elements.splice(idx, 1)
+      elements.splice(location, 0, toBeMoved)
+      return elements
+    }
   }
 }
