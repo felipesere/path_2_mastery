@@ -158,11 +158,10 @@ export function transform(collection) {
     move: (idx, { to: location }) => {
       const elements = [...collection]
       const toBeMoved = elements[idx]
-      if (idx > location) {
-        location += 1
-      }
+
       elements.splice(idx, 1)
       elements.splice(location, 0, toBeMoved)
+
       return elements
     }
   }
