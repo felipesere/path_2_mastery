@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 export class List extends React.Component {
   constructor({ elements, displayFn }) {
@@ -12,16 +11,19 @@ export class List extends React.Component {
     const displayFn = this.displayFn
     const swap = this.swap.bind(this)
     return (
-      <div>
+      <React.Fragment>
         {this.state.elements.map((element, index) => {
           return (
-            <div key={element.id}>
+            <Droppable
+              key={element.id}
+              index={index}
+              drop={(x, y) => swap(x, y)}
+            >
               <Draggable index={index}>{displayFn(element)}</Draggable>
-              <Droppable index={index} drop={(x, y) => swap(x, y)} />
-            </div>
+            </Droppable>
           )
         })}
-      </div>
+      </React.Fragment>
     )
   }
 
@@ -120,7 +122,7 @@ class Droppable extends React.Component {
     this.setState({ className: 'over' })
   }
 
-  onDragLeave(e) {
+  onDragLeave() {
     this.setState({ className: '' })
   }
 
@@ -132,7 +134,7 @@ class Droppable extends React.Component {
         onDragOver={this.onDragOver}
         onDragLeave={this.onDragLeave}
       >
-        SPACE
+        {this.props.children}
       </div>
     )
   }

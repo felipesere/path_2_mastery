@@ -57,8 +57,14 @@ export class MyPathContainer extends React.Component {
 function MyPath({ done, todo }) {
   return (
     <div className="path">
-      {done.map(l => <Lesson.Tiny key={hash(l.title)} lesson={l} />)}
-      <Lesson.Detailed />
+      {done.map(l => (
+        <div>
+          <Lesson.Tiny key={hash(l.title)} lesson={l} />
+        </div>
+      ))}
+      <div>
+        <Lesson.Detailed />
+      </div>
       <List elements={todo} displayFn={l => <Lesson.Tiny lesson={l} />} />
     </div>
   )

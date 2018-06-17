@@ -23,6 +23,10 @@ h3 {
   margin-bottom: 25px;
 }
 
+.ui.card {
+  margin: 0;
+}
+
 .path {
   display: flex;
   flex-direction: column;
@@ -38,6 +42,7 @@ h3 {
   float: right;
 }
 
+/*
 .move-up {
   margin-bottom: 80px;
 }
@@ -47,11 +52,11 @@ h3 {
 }
 
 .dropzone {
-  height: 20px;
+  height: 133%;
   transition: all .2s ease-out;
 }
 
 .over {
   height: 100px;
 }
-
+*/
