@@ -22,16 +22,31 @@
     "singleQuote": true
   },
   "ava": {
-    "files": [
-      "test/**/*.spec.js"
-    ]
+    "require": [
+      "esm",
+      "@babel/register"
+    ],
+    "babel": {
+      "testOptions": {
+        "presets": [
+          "@babel/preset-react",
+          [
+            "module:ava/stage-4",
+            {
+              "modules": false
+            }
+          ]
+        ]
+      }
+    }
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.0",
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.23.0",
+    "babel-loader": "^8.0.0-beta",
+    "@babel/cli": "^7.0.0-beta",
+    "@babel/core": "^7.0.0-beta",
+    "@babel/preset-env": "^7.0.0-beta",
+    "@babel/preset-react": "^7.0.0-beta",
+    "ava": "^1.0.0-beta",
     "eslint": "^4.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
@@ -45,7 +60,8 @@
     "webpack-dev-server": "^3.0.0"
   },
   "dependencies": {
-    "ava": "^0.25.0",
+    "@babel/register": "^7.0.0-beta.51",
+    "esm": "^3.0.51",
     "react-markdown": "^3.3.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

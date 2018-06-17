@@ -1,3 +1,14 @@
 {
-  presets: ["env", "react"]
+  presets: [
+    '@babel/react',
+    [
+      '@babel/env',
+      {
+        targets: {
+          browsers: 'last 2 Chrome versions'
+        },
+        "modules": false
+      }
+    ]
+  ]
 }
