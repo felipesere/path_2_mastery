@@ -18,18 +18,6 @@ function Navigation() {
 }
 
 export class Path2Mastery extends Component {
-  render() {
-    return (
-      <div>
-        <Navigation />
-        <Route exact path="/" component={MyPathContainer} />
-        <Route exact path="/my-path" component={AvailableLessonsContainer} />
-      </div>
-    )
-  }
-}
-
-class AvailableLessonsContainer extends Component {
   constructor(props) {
     super(props)
     this.state = { loading: true, lessons: [] }
@@ -53,7 +41,21 @@ class AvailableLessonsContainer extends Component {
         </Loader>
       )
     } else {
-      return <AvailableLessons lessons={this.state.lessons} />
+      return (
+        <div>
+          <Navigation />
+          <Route
+            exact
+            path="/"
+            render={() => <AvailableLessons lessons={this.state.lessons} />}
+          />
+          <Route
+            exact
+            path="/my-path"
+            render={() => <MyPathContainer lessons={this.state.lessons} />}
+          />
+        </div>
+      )
     }
   }
 }

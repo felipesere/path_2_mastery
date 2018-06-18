@@ -6,47 +6,9 @@ import { SortableContainer, SortableElement } from 'react-sortable-hoc'
 export class MyPathContainer extends React.Component {
   constructor(props) {
     super(props)
-    const bordingLessons = [
-      {
-        id: 1,
-        title: '1',
-        subtitle: 'Something fancy and flavourful'
-      },
-      {
-        id: 2,
-        title: '2',
-        subtitle: 'Something fancy and flavourful'
-      },
-      {
-        id: 3,
-        title: '3',
-        subtitle: 'Something fancy and flavourful'
-      },
-      {
-        id: 4,
-        title: '4',
-        subtitle: 'Something fancy and flavourful'
-      },
-      {
-        id: 5,
-        title: '5',
-        subtitle: 'Something fancy and flavourful'
-      },
-      {
-        id: 6,
-        title: '6',
-        subtitle: 'Something fancy and flavourful'
-      },
-      {
-        id: 7,
-        title: '7',
-        subtitle: 'Something fancy and flavourful'
-      }
-    ]
-
     this.state = {
-      done: bordingLessons.slice(0, 2),
-      todo: bordingLessons.slice(2)
+      done: props.lessons.filter(l => l.status === 'done'),
+      todo: props.lessons.filter(l => l.status === 'todo')
     }
   }
   render() {
@@ -54,23 +16,33 @@ export class MyPathContainer extends React.Component {
   }
 }
 
+MyPathContainer.defaultProps = {
+  lessons: []
+}
+
 function MyPath({ done, todo }) {
   return (
     <div className="path">
+      <DoneList done={done} />
+      <Lesson.Detailed />
+      <TodoList lessons={todo} />
+    </div>
+  )
+}
+
+function DoneList({ done }) {
+  return (
+    <React.Fragment>
       {done.map(l => (
         <div key={hash(l.title)}>
           <Lesson.Tiny lesson={l} />
         </div>
       ))}
-      <div>
-        <Lesson.Detailed />
-      </div>
-      <Todo lessons={todo} />
-    </div>
+    </React.Fragment>
   )
 }
 
-class Todo extends React.Component {
+class TodoList extends React.Component {
   constructor(props) {
     super(props)
     this.state = props
