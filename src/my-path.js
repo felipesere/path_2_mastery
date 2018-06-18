@@ -58,8 +58,8 @@ function MyPath({ done, todo }) {
   return (
     <div className="path">
       {done.map(l => (
-        <div>
-          <Lesson.Tiny key={hash(l.title)} lesson={l} />
+        <div key={hash(l.title)}>
+          <Lesson.Tiny lesson={l} />
         </div>
       ))}
       <div>
@@ -85,27 +85,27 @@ class Todo extends React.Component {
   render() {
     return (
       <SortableList
-        items={this.state.lessons}
+        lessons={this.state.lessons}
         onSortEnd={this.onSortEnd.bind(this)}
       />
     )
   }
 }
 
-const SortableList = SortableContainer(({ items }) => {
+const SortableList = SortableContainer(({ lessons }) => {
   return (
     <ul>
-      {items.map((value, index) => (
-        <SortableLesson key={`item-${index}`} index={index} value={value} />
+      {lessons.map((l, index) => (
+        <SortableLesson key={index} index={index} lesson={l} />
       ))}
     </ul>
   )
 })
 
-const SortableLesson = SortableElement(({ value }) => {
+const SortableLesson = SortableElement(({ lesson }) => {
   return (
     <li>
-      <Lesson.Tiny lesson={value} />
+      <Lesson.Tiny lesson={lesson} />
     </li>
   )
 })
