@@ -1,34 +1,18 @@
 import React from 'react'
-import { Card } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
+import { Parts } from './parts'
 
 export function DetailedLesson({ lesson }) {
   return (
-    <Card raised>
-      <Card.Content>
-        <Card.Header>{lesson.title}</Card.Header>
-        <Card.Meta>{lesson.subtitle}</Card.Meta>
-        <p>{lesson.description}</p>
-        <Outputs outputs={lesson.outputs} />
-        <Outcomes outcomes={lesson.outcomes} />
-      </Card.Content>
-    </Card>
-  )
-}
-
-function Outputs({ outputs }) {
-  return (
-    <React.Fragment>
-      <p>Outputs</p>
-      <ul>{outputs.map((output, i) => <li key={i}>{output}</li>)}</ul>
-    </React.Fragment>
-  )
-}
-
-function Outcomes({ outcomes }) {
-  return (
-    <React.Fragment>
-      <p>Outcomes</p>
-      <ul>{outcomes.map((outcome, i) => <li key={i}>{outcome}</li>)}</ul>
-    </React.Fragment>
+    <div className="detailed-lesson">
+      <Header>
+        {lesson.title}
+        <Header.Subheader>{lesson.subtitle}</Header.Subheader>
+      </Header>
+      <p>{lesson.description}</p>
+      <Parts.Outputs outputs={lesson.outputs} />
+      <Parts.Outcomes outcomes={lesson.outcomes} />
+      <Parts.Reading reading={lesson.reading} />
+    </div>
   )
 }
