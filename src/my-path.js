@@ -1,7 +1,7 @@
 import React from 'react'
 import { Lesson } from './lesson/lesson'
 import hash from 'string-hash'
-import { List } from './drag-and-drop/list'
+import { SortableContainer, SortableElement } from 'react-sortable-hoc'
 
 export class MyPathContainer extends React.Component {
   constructor(props) {
@@ -65,7 +65,61 @@ function MyPath({ done, todo }) {
       <div>
         <Lesson.Detailed />
       </div>
-      <List elements={todo} displayFn={l => <Lesson.Tiny lesson={l} />} />
+      <Todo lessons={todo} />
     </div>
   )
+}
+
+class Todo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = props
+  }
+
+  onSortEnd({ oldIndex, newIndex }) {
+    this.setState({
+      lessons: transform(this.state.lessons).move(oldIndex, { to: newIndex })
+    })
+  }
+
+  render() {
+    return (
+      <SortableList
+        items={this.state.lessons}
+        onSortEnd={this.onSortEnd.bind(this)}
+      />
+    )
+  }
+}
+
+const SortableList = SortableContainer(({ items }) => {
+  return (
+    <ul>
+      {items.map((value, index) => (
+        <SortableLesson key={`item-${index}`} index={index} value={value} />
+      ))}
+    </ul>
+  )
+})
+
+const SortableLesson = SortableElement(({ value }) => {
+  return (
+    <li>
+      <Lesson.Tiny lesson={value} />
+    </li>
+  )
+})
+
+function transform(collection) {
+  return {
+    move: (idx, { to: location }) => {
+      const elements = [...collection]
+      const toBeMoved = elements[idx]
+
+      elements.splice(idx, 1)
+      elements.splice(location, 0, toBeMoved)
+
+      return elements
+    }
+  }
 }
