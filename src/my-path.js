@@ -8,23 +8,27 @@ export class MyPathContainer extends React.Component {
     super(props)
     this.state = {
       done: props.lessons.filter(l => l.status === 'done'),
+      current: props.lessons.find(l => l.status === 'current'),
       todo: props.lessons.filter(l => l.status === 'todo')
     }
   }
+
   render() {
-    return <MyPath done={this.state.done} todo={this.state.todo} />
+    return (
+      <MyPath
+        done={this.state.done}
+        current={this.state.current}
+        todo={this.state.todo}
+      />
+    )
   }
 }
 
-MyPathContainer.defaultProps = {
-  lessons: []
-}
-
-function MyPath({ done, todo }) {
+function MyPath({ done, current, todo }) {
   return (
     <div className="path">
       <DoneList done={done} />
-      <Lesson.Detailed />
+      <Lesson.Detailed lesson={current} />
       <TodoList lessons={todo} />
     </div>
   )
