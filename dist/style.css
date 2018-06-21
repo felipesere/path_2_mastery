@@ -12,6 +12,7 @@ h3 {
 /* Hack to fix some weird SemantiUI issue */
 .available-lessons > .ui.card {
   margin: 0;
+  margin-top: 20px;
 }
 
 .available-lessons {
