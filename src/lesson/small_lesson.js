@@ -22,7 +22,7 @@ export function SmallLesson({ lesson, moreDetails }) {
   }
 
   return (
-    <Card raised>
+    <Card raised className={'small-lesson'}>
       <Card.Content>
         <Card.Header>
           <p style={titleStyle}>{lesson.title}</p>
@@ -30,7 +30,7 @@ export function SmallLesson({ lesson, moreDetails }) {
         </Card.Header>
         <Card.Description>{lesson.subtitle}</Card.Description>
       </Card.Content>
-      <Card.Content extra>
+      <Card.Content extra className={'interaction-button-group'}>
         <Interactions moreDetails={moreDetails} />
       </Card.Content>
     </Card>
