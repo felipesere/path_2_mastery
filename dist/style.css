@@ -16,6 +16,8 @@ h3 {
 }
 
 .available-lessons {
+  width: 80%;
+  margin: auto;
   display: grid;
   grid-auto-rows: 1fr;
   grid-gap: 25px;
