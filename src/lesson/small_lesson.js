@@ -4,12 +4,26 @@ import { LessonIcon } from './icons'
 import ReactPlaceholder from 'react-placeholder'
 import 'react-placeholder/lib/reactPlaceholder.css'
 
-const Interactions = ({ moreDetails }) => {
-  return (
-    <Button.Group widths={2}>
+const Interactions = ({ moreDetails, status }) => {
+  let button
+  if (status === 'todo' || status === 'current') {
+    button = (
+      <Button basic color="red">
+        Remove
+      </Button>
+    )
+  }
+  if (status === 'none') {
+    button = (
       <Button basic color="blue">
         Add
       </Button>
+    )
+  }
+
+  return (
+    <Button.Group widths={2}>
+      {button}
       <Button basic color="grey" onClick={moreDetails}>
         More
       </Button>
@@ -36,7 +50,7 @@ export function SmallLesson({ lesson, moreDetails }) {
         <PlaceholderText />
       </Card.Content>
       <Card.Content extra className={'interaction-button-group'}>
-        <Interactions moreDetails={moreDetails} />
+        <Interactions moreDetails={moreDetails} status={lesson.status} />
       </Card.Content>
     </Card>
   )
