@@ -1,7 +1,7 @@
 import React from 'react'
 import { Lesson } from './lesson/lesson'
 import { FilterMenu } from './filter-menu/filter-menu'
-import { Accordion, Icon } from 'semantic-ui-react'
+import { Container, Accordion, Icon } from 'semantic-ui-react'
 
 class CollapsableFilter extends React.Component {
   constructor(props) {
@@ -34,14 +34,14 @@ class CollapsableFilter extends React.Component {
 
 export function AvailableLessons({ lessons }) {
   return (
-    <React.Fragment>
+    <Container>
       <CollapsableFilter />
       <div className="available-lessons">
         {lessons.map(lesson => (
           <ModalOrLesson lesson={lesson} key={lesson.id} />
         ))}
       </div>
-    </React.Fragment>
+    </Container>
   )
 }
 

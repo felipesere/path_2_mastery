@@ -57,5 +57,7 @@ export function SmallLesson({ lesson, moreDetails }) {
 }
 
 const PlaceholderText = () => (
-  <ReactPlaceholder type="text" rows={3} color={'#e8e8e8'} />
+  <ReactPlaceholder ready={false} type="text" rows={3} color={'#e8e8e8'}>
+    Will never be displayed
+  </ReactPlaceholder>
 )
