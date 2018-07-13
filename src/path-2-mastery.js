@@ -2,18 +2,20 @@ import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import { AvailableLessons } from './available-lessons'
 import { MyPathContainer } from './my-path'
-import { Menu, Loader } from 'semantic-ui-react'
+import { Container, Menu, Loader } from 'semantic-ui-react'
 
 function Navigation() {
   return (
-    <Menu>
-      <Menu.Item>
-        <Link to="/">All Lessons</Link>
-      </Menu.Item>
-      <Menu.Item>
-        <Link to="/my-path">My Path</Link>
-      </Menu.Item>
-    </Menu>
+    <Container>
+      <Menu>
+        <Menu.Item>
+          <Link to="/">All Lessons</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/my-path">My Path</Link>
+        </Menu.Item>
+      </Menu>
+    </Container>
   )
 }
 
