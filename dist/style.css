@@ -16,13 +16,11 @@ h3 {
 }
 
 .available-lessons {
-  width: 80%;
-  margin: auto;
   display: grid;
   grid-auto-rows: 1fr;
   grid-gap: 25px;
   grid-template-columns: repeat(auto-fit, 250px);
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 25px;
 }
 
