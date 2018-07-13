@@ -24,7 +24,12 @@ export class Path2Mastery extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3030/lessons')
+    fetch('https://api.faros.io/lessons', {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      }
+    })
       .then(response => response.json())
       .then(downloaded_lessons => {
         setTimeout(() => {
