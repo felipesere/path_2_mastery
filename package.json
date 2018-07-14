@@ -5,7 +5,7 @@
   "homepage": "https://github.com/felipesere/path_2_mastery",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --content-base dist --host 0.0.0.0",
+    "dev": "webpack-dev-server --mode development --content-base dist",
     "api": "json-server --port 3030 --watch lessons.json",
     "lint": "eslint src test",
     "prettier": "prettier --write *.js",
