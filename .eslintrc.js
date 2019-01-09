@@ -1,27 +1,25 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jasmine": true
+  env: {
+    browser: true,
+    es6: true,
+    jasmine: true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "prettier"
-  ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "jsx": true
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
+  parserOptions: {
+    ecmaVersion: 6,
+    ecmaFeatures: {
+      jsx: true
     },
-    "sourceType": "module"
+    sourceType: 'module'
   },
-  "plugins": [
-    "prettier",
-    "react"
-  ],
-  "rules": {
-    "prettier/prettier": "error",
-    "react/prop-types": 0
+  plugins: ['prettier', 'react'],
+  rules: {
+    'prettier/prettier': 'error',
+    'react/prop-types': 0
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
-};
+}

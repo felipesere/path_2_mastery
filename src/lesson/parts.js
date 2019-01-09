@@ -12,7 +12,11 @@ function Outputs({ outputs }) {
   return (
     <React.Fragment>
       <p>Outputs</p>
-      <ol>{outputs.map(o => <li key={hash(o)}>{o}</li>)}</ol>
+      <ol>
+        {outputs.map(o => (
+          <li key={hash(o)}>{o}</li>
+        ))}
+      </ol>
     </React.Fragment>
   )
 }
@@ -21,7 +25,11 @@ function Outcomes({ outcomes }) {
   return (
     <React.Fragment>
       <p>Outcomes</p>
-      <ol>{outcomes.map(o => <li key={hash(o)}>{o}</li>)}</ol>
+      <ol>
+        {outcomes.map(o => (
+          <li key={hash(o)}>{o}</li>
+        ))}
+      </ol>
     </React.Fragment>
   )
 }
@@ -36,7 +44,9 @@ function Reading({ reading }) {
       <React.Fragment>
         <p>Reading material</p>
         <ol>
-          {reading.map(book => <li key={hash(book)}>{markdown(book)}</li>)}
+          {reading.map(book => (
+            <li key={hash(book)}>{markdown(book)}</li>
+          ))}
         </ol>
       </React.Fragment>
     )

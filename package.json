@@ -7,38 +7,15 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --content-base dist",
     "api": "json-server --port 3030 --watch lessons.json",
-    "lint": "eslint src test",
-    "prettier": "prettier --write *.js",
-    "test": "ava"
+    "lint": "eslint src",
+    "prettier": "prettier --write {src,test}/**/*.js",
+    "test": "echo \"nada\""
   },
   "author": "Felipe Sere, Christoph Gockel",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/felipesere/path_2_mastery.git"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
-  },
-  "ava": {
-    "require": [
-      "esm",
-      "@babel/register"
-    ],
-    "babel": {
-      "testOptions": {
-        "presets": [
-          "@babel/preset-react",
-          [
-            "module:ava/stage-4",
-            {
-              "modules": false
-            }
-          ]
-        ]
-      }
-    }
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
