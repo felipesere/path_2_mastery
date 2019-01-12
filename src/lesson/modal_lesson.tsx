@@ -1,8 +1,14 @@
 import React from 'react'
 import { Modal, Header } from 'semantic-ui-react'
 import { Parts } from './parts'
+import {LessonType} from "../types";
 
-export function ModalLesson({ lesson, close }) {
+type ModalLessonProps = {
+    lesson: LessonType,
+    close: any,
+}
+
+export const ModalLesson = ({ lesson, close }: ModalLessonProps) => {
   return (
     <Modal open={true} onClose={close} size="small">
       <Header>

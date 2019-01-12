@@ -1,0 +1,150 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:all", "tslint-react"],
+  "rules": {
+    // I prefer T[] over Array<T>
+    "array-type": [true, "array"],
+
+    // looks better than a single "wrapped" arg
+    "arrow-parens": [true, "ban-single-arg-parens"],
+
+    // no code docs yet
+    "completed-docs": false,
+
+    // Default doesn't specify 2
+    "indent": [true, "spaces", 2],
+
+    // no need for file headers
+    "file-header": false,
+
+    // Different casing for different use cases
+    "file-name-casing": false,
+
+    // no code docs yet
+    "jsdoc-format": false,
+
+    // I just like this is better than the default
+    "interface-name": false,
+
+    // I prefer type literals over unions for data structures
+    "interface-over-type-literal": false,
+
+    // Sometimes I prefer more than one
+    "max-classes-per-file": false,
+
+    // Unecessary to enforce
+    "max-line-length": false,
+
+    // I just like this is better than the default
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ],
+        "alphabetize": false
+      }
+    ],
+
+    // a little too verbose
+    "newline-before-return": false,
+
+    // a little too verbose
+    "newline-per-chained-call": false,
+
+    // Default is true, but any is valid sometimes
+    "no-any": false,
+
+    // Gatsby needs a default export for pages
+    "no-default-export": false,
+
+    // noop is a valid use case
+    "no-empty": false,
+
+    // Default is true, but...
+    // 1. also *need* ignore-properties so that we also satisfy typedef rule
+    // 2. also *prefer* to have a typedef on parameters even if a default value allows them to be inferred
+    "no-inferrable-types": [true, "ignore-params", "ignore-properties"],
+
+    // Use of null is semantically appropriate
+    "no-null-keyword": false,
+
+    // Default is true, but a little too strict for my taste
+    "object-literal-sort-keys": false,
+
+    // Named functions for React components so displayName is set properly
+    "only-arrow-functions": [true, "allow-named-functions"],
+
+    // The same as the default but also enables grouped-imports
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "import-sources-order": "case-insensitive",
+        "module-source-path": "full",
+        "named-imports-order": "case-insensitive"
+      }
+    ],
+
+    // BaseMatcher#describe
+    "prefer-function-over-method": [true, "allow-public"],
+
+    // Default is just true
+    // Allow undefined or null to be used as an `if` condition
+    "strict-boolean-expressions": [true, "allow-null-union", "allow-undefined-union"],
+
+    // Remove this after next release of TSLint
+    // Same as default but adds esSpecCompliant
+    "trailing-comma": [
+      true,
+      {
+        "esSpecCompliant": true,
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+
+    // Default includes all options; we don't care about having typedefs on _everything_
+    "typedef": [
+      true,
+      "call-signature",
+      // "arrow-call-signature",
+      "parameter",
+      // "arrow-parameter",
+      "property-declaration",
+      // "variable-declaration",
+      "member-variable-declaration"
+    ],
+
+    // The same as the default but also enables allow-leading-underscore
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
+
+    // tslint-react
+    "jsx-alignment": true,
+    "jsx-boolean-value": false,
+    "jsx-curly-spacing": "never",
+    "jsx-equals-spacing": "never",
+    "jsx-key": true,
+    "jsx-no-bind": true,
+    "jsx-no-lambda": true,
+    "jsx-no-multiline-js": false,
+    "jsx-no-string-ref": true,
+    "jsx-self-close": true,
+    "jsx-space-before-trailing-slash": true,
+    "jsx-wrap-multiline": true
+  }
+}

@@ -1,8 +1,12 @@
 import React from 'react'
 import { Header } from 'semantic-ui-react'
 import { Parts } from './parts'
+import {LessonType} from "../types";
 
-export function DetailedLesson({ lesson }) {
+type DetailedLessonProps = {
+    lesson: LessonType
+}
+export const DetailedLesson = ({ lesson }: DetailedLessonProps) => {
   return (
     <div className="detailed-lesson">
       <Header>

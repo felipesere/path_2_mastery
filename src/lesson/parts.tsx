@@ -1,14 +1,14 @@
 import React from 'react'
 import hash from 'string-hash'
 import ReactMarkdown from 'react-markdown'
+import {Outcomes, Outputs, Readings} from "../types";
 
-export const Parts = {
-  Outputs: Outputs,
-  Outcomes: Outcomes,
-  Reading: Reading
+
+type OutputsProps = {
+    outputs: Outputs
 }
 
-function Outputs({ outputs }) {
+const Outputs = ({ outputs }: OutputsProps) => {
   return (
     <React.Fragment>
       <p>Outputs</p>
@@ -21,7 +21,10 @@ function Outputs({ outputs }) {
   )
 }
 
-function Outcomes({ outcomes }) {
+type OutcomesProps = {
+    outcomes: Outcomes
+}
+const Outcomes = ({ outcomes }: OutcomesProps) => {
   return (
     <React.Fragment>
       <p>Outcomes</p>
@@ -34,11 +37,12 @@ function Outcomes({ outcomes }) {
   )
 }
 
-function markdown(text) {
-  return <ReactMarkdown source={text} />
-}
+const markdown = (text: string) => <ReactMarkdown source={text}/>;
 
-function Reading({ reading }) {
+type ReadingProps = {
+    reading: Readings
+}
+const Reading = ({ reading }: ReadingProps ) => {
   if (reading && reading.length > 0) {
     return (
       <React.Fragment>
@@ -54,3 +58,10 @@ function Reading({ reading }) {
     return null
   }
 }
+
+export const Parts = {
+    Outputs: Outputs,
+    Outcomes: Outcomes,
+    Reading: Reading
+}
+

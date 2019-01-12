@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {CSSProperties} from 'react'
 import { Card, Button } from 'semantic-ui-react'
 import { LessonIcon } from './icons'
 import ReactPlaceholder from 'react-placeholder'
 import 'react-placeholder/lib/reactPlaceholder.css'
+import {LessonStatus, LessonType} from "../types";
 
-const Interactions = ({ moreDetails, status }) => {
-  let button
+type InteractionsProps = {
+    moreDetails: any,
+    status: LessonStatus
+}
+const Interactions = ({ moreDetails, status }: InteractionsProps) => {
+  let button = null;
   if (status === 'todo' || status === 'current') {
     button = (
       <Button basic color="red">
@@ -31,11 +36,16 @@ const Interactions = ({ moreDetails, status }) => {
   )
 }
 
-export function SmallLesson({ lesson, moreDetails }) {
-  const titleStyle = {
+type SmallLessonProps = {
+    lesson: LessonType,
+    moreDetails: any,
+}
+
+export const SmallLesson = ({ lesson, moreDetails }: SmallLessonProps) => {
+  const titleStyle: CSSProperties = {
     float: 'left',
     width: '80%'
-  }
+  };
 
   return (
     <Card raised className={'small-lesson'}>

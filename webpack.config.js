@@ -6,6 +6,10 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+
+  resolve: {
+    extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+  },
   module: {
     rules: [
       {
@@ -16,6 +20,10 @@ const config = {
       {
         test: /\.css$/,
         use: ['css-loader']
+      },
+      {
+        test: /\.tsx?$/,
+        use: ['awesome-typescript-loader']
       }
     ]
   }

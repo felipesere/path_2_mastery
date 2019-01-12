@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon } from 'semantic-ui-react'
+import {LessonStatus} from "../types";
 
 const Done = () => (
   <Icon className="lesson-icon" name="check circle outline" color="green" />
@@ -13,7 +14,12 @@ const Todo = () => (
   <Icon className="lesson-icon" name="circle outline" color="blue" />
 )
 
-export function LessonIcon({ status }) {
+type LessonIconProps = {
+    status: LessonStatus
+}
+
+/* This must be an error...  */
+export const LessonIcon = ({ status }: LessonIconProps) => {
   switch (status) {
     case 'done':
       return <Done />
